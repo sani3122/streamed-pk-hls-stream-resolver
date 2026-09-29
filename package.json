@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.client.json && cp src/client/index.html src/client/styles.css dist/client/ && rm -rf dist/goat/vendor && cp -R src/goat/vendor dist/goat/vendor",
-    "start": "npm run build && (lsof -tiTCP:${PORT:-3000} -sTCP:LISTEN | xargs kill -9 2>/dev/null || true) && (pkill -9 -f 'node dist/server/main.js' 2>/dev/null || true) && node dist/server/main.js",
+    "start": "node dist/server/main.js",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit"
   },
   "dependencies": {
